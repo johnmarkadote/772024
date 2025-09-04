@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Monthsary By ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      margin-top: 50px;
+      font-size: 3em;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    h2 {
+      margin-top: 20px;
+      font-size: 2em;
+      animation: fadeIn 3s ease-in-out;
+    }
+
+    #countdown {
+      font-size: 1.5em;
+      margin: 20px;
+    }
+
+    .message {
+      margin: 40px auto;
+      width: 80%;
+      font-size: 1.2em;
+      background: rgba(255,255,255,0.2);
+      padding: 20px;
+      border-radius: 20px;
+    }
+
+    .gallery {
+      margin: 50px auto;
+      width: 90%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .gallery img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: transform 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.1);
+    }
+
+
+    .heart {
+      position: fixed;
+      bottom: -10px;
+      color: rgba(255,255,255,0.8);
+      font-size: 24px;
+      animation: floatUp 5s linear infinite;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0) rotate(0); opacity: 1; }
+      100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Happy Monthsary ❤️</h1>
+  <h2>John Mark & Criscia</h2>
+
+  <div id="countdown"></div>
+
+  <div class="message">
+    <p>
+      My only by Criscia,  
+      Every moment with you is a treasure.  
+      As we celebrate our monthsary, I’m grateful for your love, your smile, and the happiness you bring into my life.  
+      Here’s to many more months and years together. ❤️  
+    </p>
+  </div>
+
+  <h2>Our Memories 📸</h2>
+  <div class="gallery">
+    <img src="Messenger_creation_03C7A748-8A03-4EB2-B4D1-83CD38A9B6C9.jpeg" alt="Memory 1">
+    <img src="Messenger_creation_5CEBBD7F-8715-4938-98BF-EE66EC39154F.jpeg" alt="Memory 2">
+    <img src="Messenger_creation_811F2B2F-0D1C-473F-89FB-4229428F6B52.jpeg" alt="Memory 3">
+    <img src="Messenger_creation_889422CF-7A49-4A3C-B7CD-596545AF43F4.jpeg" alt="Memory 4">
+    <img src="Messenger_creation_95CADDDE-D467-43AC-8574-C6B2C7B9BDA4.jpeg" alt="Memory 5">
+    <img src="Messenger_creation_95CADDDE-D467-43AC-8574-C6B2C7B9BDA4.jpeg" alt="Memory 6">
+    <img src="Messenger_creation_DA6E00F2-7965-41E7-BCD6-EAB92B57EC16.jpeg" alt="Memory 7">
+    <img src="Messenger_creation_ED211836-E30C-4F51-876E-FB0BC9C07135.jpeg" alt="Memory 8">  
+    <img src="Messenger_creation_F1109036-967D-4CE5-83EB-8184DC35C5A2.jpeg" alt="Memory 9">
+  </div>
+
+  <script>
+   
+    const countdown = document.getElementById('countdown');
+    const targetDate = new Date("Sep 7, 2025 00:00:00").getTime();
+
+    setInterval(function() {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdown.innerHTML = "⏳ " + days + "d " + hours + "h " + minutes + "m " + seconds + "s left until our Monthsary ❤️";
+
+      if (distance < 0) {
+        countdown.innerHTML = "🎉 Happy Monthsary, John Mark & Criscia! ❤️";
+      }
+    }, 1000);
+
+
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerHTML = "❤️";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = Math.random() * 20 + 15 + "px";
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 5000);
+    }
+    setInterval(createHeart, 500);
+  </script>
+</body>
+</html>
